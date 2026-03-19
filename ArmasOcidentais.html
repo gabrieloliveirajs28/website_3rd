@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecos do Aço — Armas Ocidentais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Pro:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+ *{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+background:#0e0d0b;
+color:#e8e0d0;
+font-family:"Crimson Pro", serif;
+font-size: 20px;
+line-height:1.7;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+h1,h2,h3,.logo{
+font-family:Garamond,serif;
+}
+
+
+#menu{
+display:none;
+}
+
+.hamburger{
+position:fixed;
+top:20px;
+left:20px;
+z-index:200;
+background: #3c362a;
+border:px solid #2e2b24;
+cursor:pointer;
+display:flex;
+padding:10px;
+}
+
+
+
+
+#menu:checked ~ .hamburger{
+opacity:0;
+pointer-events:none;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:transparent;
+z-index:150;
+pointer-events:none;
+}
+
+#menu:checked ~ .overlay{
+background:rgba(0,0,0,0.6);
+pointer-events:all;
+}
+
+.sidebar{
+position:fixed;
+top:0;
+left:0;
+width:240px;
+height:100%;
+background:#0c0b09;
+border-right:1px solid #2e2b24;
+z-index:160;
+transform:translateX(-100%);
+transition:0.3s;
+display:flex;
+flex-direction:column;
+}
+
+#menu:checked ~ .sidebar{
+transform:translateX(0);
+}
+
+.sidebar header{
+padding:24px 20px;
+border-bottom:1px solid #2e2b24;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.close{
+cursor:pointer;
+font-size:20px;
+color:#a89880;
+}
+
+.sidebar nav{
+flex:1;
+padding-top:10px;
+}
+
+.sidebar nav a{
+display:block;
+padding:14px 20px;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:1px;
+color:#a89880;
+border-left:2px solid transparent;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active{
+color:#c8a96e;
+border-left:2px solid #c8a96e;
+background:rgba(200,169,110,0.05);
+}
+
+.sidebar hr{
+border:none;
+border-top:1px solid #2e2b24;
+margin:6px 20px;
+}
+
+.sidebar footer{
+padding:16px 20px;
+border-top:1px solid #2e2b24;
+font-size:12px;
+color:#6b5f4f;
+}
+
+
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#161412;
+border-bottom:1px solid #2e2b24;
+}
+
+.hero-content{
+max-width:600px;
+padding:80px 32px;
+}
+
+
+.hero h1{
+font-size:42px;
+margin-bottom:16px;
+color:#f2ead8;
+}
+
+.hero p{
+color:#a89880;
+}
+
+
+section{
+padding:70px 0;
+border-top:1px solid #2e2b24;
+}
+
+.bg2{
+background:#333130;
+}
+
+.container{
+max-width:960px;
+margin:auto;
+padding:0 40px;
+}
+
+h2{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.desc{
+color:#a89880;
+max-width:520px;
+margin-bottom:40px;
+}
+
+
+.cartas{
+display:flex;
+flex-wrap:wrap;
+gap:16px;
+}
+
+.carta{
+background:#1a1815;
+border:1px solid #2e2b24;
+padding:28px;
+width:31%;
+transition:0.25s;
+}
+
+.carta img {
+  width: 100%;
+  height: 180px;
+  object-fit:contain;
+  margin-bottom: 16px;
+}
+
+.carta:hover{
+transform:translateY(-6px);
+border-color:#c8a96e;
+}
+
+.carta h3{
+font-size:20px;
+margin-bottom:4px;
+}
+
+.origin{
+font-size:12px;
+color:#8a6f3e;
+margin-bottom:14px;
+text-transform:uppercase;
+}
+
+.carta p{
+font-size:14px;
+color:#a89880;
+line-height:1.6;
+}
+
+.feature-grid{
+display:flex;
+flex-direction: row;
+gap:50px;
+align-items: flex-start;
+}
+
+.feature-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit:contain;
+  margin-bottom: 20px;
+}
+
+.feature-grid p{
+color:#e0cbac;
+margin-bottom:20px;
+}
+
+.destaque-box{
+background:#1a1815;
+border: 1px solid #2e2b24;
+padding:28px;
+min-width: 320px;
+max-width: 350px;
+align-self: flex-start;
+}
+
+.destaque-item{
+display:flex;
+gap:30px;
+padding:15px;
+border-bottom:1px solid #2e2b24;
+}
+
+.destaque-item:last-child{
+border:none;
+}
+
+.destaque-item b{
+color:#8a6f3e;
+min-width:120px;
+flex-shrink: 0;
+}
+
+
+.page-footer{
+padding:40px 0;
+}
+
+.footer-inner{
+max-width:960px;
+margin:auto;
+padding:0 40px;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+}
+
+.footer-inner p{
+font-size:14px;
+color:#6b5f4f;
+max-width:280px;
+}
+  </style>
+</head>
+<body>
+
+<input type="checkbox" id="menu" autocomplete="off" />
+<label class="hamburger" for="menu">☰</label>
+<label class="overlay" for="menu"></label>
+<aside class="sidebar">
+  <header>
+    <span class="logo"> Ecos do Aço </span>
+    <label class="close" for="menu"></label>
+  </header>
+  <nav>
+      <a href="index.html">Início</a>
+      <hr />
+      <a href="ArmasOrientais.html">Armas Orientais</a>
+      <a href="ArmasOcidentais.html">Armas Ocidentais</a>
+      <hr />
+      <a href="sobre.html">Sobre</a>
+    </nav>
+    <footer>© 2026 - Ecos do Aço </footer>
+  </aside>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Armas do <em>Ocidente</em></h1>
+      <p>A tradição guerreira da Europa, Américas e mundo Nórdico através dos séculos.</p>
+    </div>
+  </section>
+
+  <section class="bg2">
+    <div class="container">
+      <h2> Catálogo (Ocidental) </h2>
+      <p class="desc">As principais armas de combate corpo a corpo das civilizações ocidentais.</p>
+      <div class="cartas">
+        <div class="carta">
+
+          <img src="imagens/longsword_1.webp" alt="Longsword"/>
+          <h3>Longsword</h3>
+          <div class="origin">Europa · Séc. XIII</div>
+          <p>Espada longa de dois fios usada com uma ou duas mãos. Versátil em combate, permitia corte e estocada com alcance superior às espadas curtas medievais.</p>
+        </div>
+
+        <div class="carta">
+          <img src="imagens/rapier.png" alt="Rapier"/>
+          <h3>Rapieira </h3>
+          <div class="origin">Europa · Séc. XVI</div>
+          <p>A rapieira ou roupeira é um tipo de espada, de lâmina comprida e estreita, popular desde o período medieval até a renascença, que se tornou a arma mais comum daquela época, principalmente na Espanha, Itália e Portugal nos séculos XVI e XVII.
+            A lâmina tem largura suficiente para cortar a golpe, mas muito do poder da rapieira vem da sua habilidade de perfuração. 
+          </p>
+        </div>
+
+        <div class="carta">
+          <img src="imagens/alabarda_2.png" alt="Halberd"/>
+          <h3>Alabarda </h3>
+          <div class="origin">Europa · Séc. IX</div>
+          <p>A alabarda é uma arma antiga composta por uma longa haste. A haste é rematada por uma peça pontiaguda, de ferroAlabardaor sua vez é atravessada por uma lâmina em forma de meia-lua (similar à de um machado), com um gancho ou esporão no outro lado. 
+            Sua difusão provocou a associação de diferentes formas, o que pode confundi-la com outras armas de cabo longo como a Naginata japonesa ou a Guan Dao chinesa.
+          </p>
+        </div>
+
+        
+        <div class="carta">
+          <img src="imagens/machado.png" alt="Battle Axe"/>
+          <h3>Machado de Batalha</h3>
+          <div class="origin">Europa · Séc. IX</div>
+          <p>O Machado dinamarquês é um tipo primitivo de machado de batalha, usado principalmente durante a tr"Machadore a Era Viquingue na Europa e início da Idade Média. Outros nomes para a arma incluem Machado Inglês e Machado de Alça.
+            Sua superfície de corte varia, mas geralmente possui entre 20 e 30 centímetros. As lâminas Tipo L tendem a ser menores, com a ponta da broca varrida a frente para uma capacidade de corte superior.
+          </p>
+        </div>
+
+        <div class="carta">
+          <img src="imagens/gladio.png" alt="Gladius"/>
+          <h3> Gládio </h3>
+          <div class="origin">Europa · Séc. III A.C</div>
+          <p> A gládio é uma espada curta utilizada na Antiguidade, que os autores latinos chamavam ense (em latim: ensis).
+            É o mais antigo tipo de espada curta de lâmina reta de dois gumes conhecida. Caracteriza-se pela sua lâmina, tradicionalmente, bastante larga e quase da mesma largura do punho à ponta.
+            Na Idade do bronze eram inigualáveis e na Idade do ferro mantiveram a primazia, em relação a outros tipos de armas alternativas.</p>
+        </div>
+
+        <div class="carta">
+          <img src="imagens/tomahawk_5.png" alt="Tomahawk"/>
+          <h3>Tomahawk</h3>
+          <div class="origin">Américas · Pré-colonial</div>
+          <p> O tomahawk (ou "machadinha") é um tipo de machado de pequena dimensão, para uso com apenas uma das mãos, usado sobretudo pelos ameríndios algonquinos da América do Norte, tanto como ferramenta, quanto como arma. 
+             Tradicionalmente, possui o formato de "machadinha" com um cabo reto O termo entrou na língua inglesa no século XVII como uma adaptação da palavra "Powhatan" (dos algonquinos da Virgínia).
+          </p>
+        </div>
+
+        <div class="carta">
+          <img src="imagens/macuahuitl_2.png" alt="Macuahuitl"/>
+          <h3>Macuahuitl</h3>
+          <div class="origin">Américas · Séc. XIV</div>
+          <p>Macuahuitl ou maquahuitl (mācuahuitl em Nahuatl,), também conhecida como “espada de madeira”, era uma arma usada pelos astecas e outros povos que habitavam no que atualmente é o México central. 
+            Era uma espécie de clava achatada de onde sobressaíam várias lâminas de obsidiana, um tipo de vidro vulcânico muito utilizado para a fabricação de instrumentos cortantes pelos povos pré-colombianos</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="feature-grid">
+        <div>
+          <span class="eyebrow">Arma em Destaque</span>
+          <img src="imagens/longsword_1.webp" alt="Longsword"/>
+          <h2>A Longsword</h2>
+          <p>A longsword medieval é um dos exemplos mais sofisticados de engenharia de combate da Europa. Ao contrário do que se imagina, seu uso exigia treinamento extenso — os tratados de esgrima medievais, conhecidos como Fechtbücher, descrevem dezenas de técnicas complexas.</p>
+          <p>Sua versatilidade era única: podia ser empunhada com uma ou duas mãos, usada em half-swording (segurando a lâmina para perfurar armaduras) e adaptada a diferentes distâncias de combate, tornando-a a arma mais completa da Europa medieval.</p>
+        </div>
+        <div class="destaque-box">
+          <span class="eyebrow">Especificações</span>
+          <div class="destaque-item"><b>Comprimento</b><span>100 – 130 cm</span></div>
+          <div class="destaque-item"><b>Lâmina</b><span>80 – 100 cm</span></div>
+          <div class="destaque-item"><b>Material</b><span>Aço carbono forjado</span></div>
+          <div class="destaque-item"><b>Empunhadura</b><span>Uma ou duas mãos</span></div>
+          <div class="destaque-item"><b>Origem</b><span>Europa, séc. XIII</span></div>
+          <div class="destaque-item"><b>Uso</b><span>Corte, estocada, impacto</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="logo"> Ecos do Aço </div>
+        <p>Um projeto educacional sobre a história das armas de combate corpo a corpo.</p>
+      </div>
+      <small>© 2026 - Ecos do Aço. Fins educacionais.</small>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecos do Aço — Sobre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Pro:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+background:#0e0d0b;
+color:#e8e0d0;
+font-family:"Crimson Pro", serif;
+font-size:20px;
+line-height:1.7;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+h1,h2,h3,.logo{
+font-family:Garamond,serif;
+}
+
+
+#menu{
+display:none;
+}
+
+.hamburger{
+position:fixed;
+top:20px;
+left:20px;
+z-index:200;
+background: #3c362a;
+border:px solid #2e2b24;
+cursor:pointer;
+display:flex;
+padding:10px;
+}
+
+
+
+
+#menu:checked ~ .hamburger{
+opacity:0;
+pointer-events:none;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:transparent;
+z-index:150;
+pointer-events:none;
+}
+
+#menu:checked ~ .overlay{
+background:rgba(0,0,0,0.6);
+pointer-events:all;
+}
+
+.barra-lateral{
+position:fixed;
+top:0;
+left:0;
+width:240px;
+height:100%;
+background:#0c0b09;
+border-right:1px solid #2e2b24;
+z-index:160;
+transform:translateX(-100%);
+transition:0.3s;
+display:flex;
+flex-direction:column;
+}
+
+#menu:checked ~ .barra-lateral{
+transform:translateX(0);
+}
+
+.barra-lateral header{
+padding:24px 20px;
+border-bottom:1px solid #2e2b24;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.close{
+cursor:pointer;
+font-size:20px;
+color:#a89880;
+}
+
+.barra-lateral nav{
+flex:1;
+padding-top:10px;
+}
+
+.barra-lateral nav a{
+display:block;
+padding:14px 20px;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:1px;
+color:#a89880;
+border-left:2px solid transparent;
+}
+
+.barra-lateral nav a:hover,
+.barra-lateral nav a.active{
+color:#c8a96e;
+border-left:2px solid #c8a96e;
+background:rgba(200,169,110,0.05);
+}
+
+.barra-lateral hr{
+border:none;
+border-top:1px solid #2e2b24;
+margin:6px 20px;
+}
+
+.barra-lateral footer{
+padding:16px 20px;
+border-top:1px solid #2e2b24;
+font-size:12px;
+color:#6b5f4f;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#161412;
+border-bottom:1px solid #2e2b24;
+}
+
+.hero-content{
+max-width:600px;
+padding:80px 32px;
+}
+
+.eyebrow{
+font-size:12px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#c8a96e;
+margin-bottom:10px;
+display:block;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:16px;
+color:#f2ead8;
+}
+
+.hero p{
+color:#a89880;
+}
+
+
+section{
+padding:70px 0;
+border-top:1px solid #2e2b24;
+}
+
+.bg2{
+background:#161412;
+}
+
+.container{
+max-width:960px;
+margin:auto;
+padding:0 40px;
+}
+
+h2{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.desc{
+color:#a89880;
+max-width:520px;
+margin-bottom:40px;
+}
+
+
+.sobre-grid{
+display:flex;
+gap:60px;
+align-items:flex-start;
+}
+
+.sobre-texto{
+flex:1;
+}
+
+.sobre-texto p{
+color:#a89880;
+margin-bottom:16px;
+font-size:16px;
+line-height:1.8;
+}
+
+
+
+.info-box{
+background:#1a1815;
+border:1px solid #2e2b24;
+padding:28px;
+min-width:260px;
+}
+
+.info-box .eyebrow{
+margin-bottom:16px;
+}
+
+.info-item{
+display:flex;
+gap:16px;
+padding:12px 0;
+border-bottom:1px solid #2e2b24;
+}
+
+.info-item:last-child{
+border:none;
+padding-bottom:0;
+}
+
+.info-item b{
+color:#8a6f3e;
+min-width:80px;
+font-size:14px;
+}
+
+.info-item span{
+color:#a89880;
+font-size:14px;
+}
+
+
+.stacks-grid{
+display:flex;
+flex-wrap:wrap;
+gap:16px;
+}
+
+.stacks-card{
+background:#1a1815;
+border:1px solid #2e2b24;
+padding:24px 28px;
+width:31%;
+transition:0.25s;
+}
+
+.stacks-card:hover{
+transform:translateY(-4px);
+border-color:#c8a96e;
+}
+
+.stacks-card h3{
+font-size:18px;
+color:#e8e0d0;
+margin-bottom:6px;
+}
+
+.stacks-card .tipo{
+font-size:12px;
+color:#8a6f3e;
+text-transform:uppercase;
+letter-spacing:1px;
+margin-bottom:12px;
+}
+
+.stacks-card p{
+font-size:14px;
+color:#a89880;
+line-height:1.6;
+}
+
+
+.feedbacks-grid{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.feedback-card{
+background:#1a1815;
+border:1px solid #2e2b24;
+border-left:3px solid #c8a96e;
+padding:28px;
+}
+
+.feedback-texto{
+font-size:16px;
+color:#a89880;
+line-height:1.8;
+margin-bottom:16px;
+font-style:italic;
+}
+
+.feedback-autor{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.feedback-avatar{
+width:36px;
+height:36px;
+background:#2e2b24;
+border:1px solid #3d3728;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:"Playfair Display",serif;
+font-size:14px;
+color:#c8a96e;
+flex-shrink:0;
+}
+
+.feedback-nome{
+font-size:14px;
+color:#e8e0d0;
+font-weight:bold;
+}
+
+.feedback-papel{
+font-size:12px;
+color:#6b5f4f;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+
+.page-footer{
+padding:40px 0;
+}
+
+.footer-inner{
+max-width:960px;
+margin:auto;
+padding:0 40px;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+}
+
+.footer-inner p{
+font-size:14px;
+color:#6b5f4f;
+max-width:280px;
+}
+  </style>
+</head>
+<body>
+
+<input type="checkbox" id="menu" autocomplete="off" />
+<label class="hamburger" for="menu">☰</label>
+<label class="overlay" for="menu"></label>
+
+  <aside class="barra-lateral">
+    <header>
+      <span class="logo">Ecos do Aço</span>
+      <label class="close" for="menu">✕</label>
+    </header>
+    <nav>
+      <a href="index.html">Início</a>
+      <hr />
+      <a href="ArmasOrientais.html">Armas Orientais</a>
+      <a href="ArmasOcidentais.html">Armas Ocidentais</a>
+      <hr />
+      <a href="sobre.html" class="active">Sobre</a>
+    </nav>
+    <footer>© 2026 - Ecos do Aço</footer>
+  </aside>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sobre o <em> Ecos do Aço </em></h1>
+      <p>Um projeto educacional desenvolvido como trabalho acadêmico, explorando história, design e desenvolvimento web.</p>
+    </div>
+  </section>
+
+  <section class="bg2">
+    <div class="container">
+      <span class="eyebrow">Objetivo</span>
+      <h2>O que é ?</h2>
+      <div class="sobre-grid">
+        <div class="sobre-texto">
+          <p>Este projeto é um guia educacional sobre armas de combate corpo a corpo, desenvolvido como projeto da disciplina de Desenvolvimento Web no 3º semestre do curso de Análise e Desenvolvimento de Sistemas.</p>
+          <p>O objetivo principal é mostrar um pouco da história, o design e a manufatura de armas brancas de diferentes civilizações — orientais e ocidentais — de forma acessível e visualmente organizada.</p>
+          <p>Este projeto serviu como oportunidade de aprendizado e aplicar os conceitos de usabilidade estudados em sala, como os princípios do livro "Não Me Faça Pensar" de Steve Krug e os princípios C.A.R.P. de Robin Williams, autora do livro "Design para Quem Não é Designer".</p>
+        </div>
+        <div class="info-box">
+          <span class="eyebrow">Ficha do Projeto</span>
+          <div class="info-item"><b>Curso</b><span>ADS — 3º Semestre</span></div>
+          <div class="info-item"><b>Disciplina</b><span>Desenvolvimento de Sistemas </span></div>
+          <div class="info-item"><b>Ano</b><span>2026</span></div>
+          <div class="info-item"><b>Páginas</b><span>4 </span></div>
+          <div class="info-item"><b>Tema</b><span>Armas de Combate Corpo a Corpo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <span class="eyebrow">Ferramentas</span>
+      <h2>Tecnologias Utilizadas</h2>
+      <p class="desc">O projeto foi construído utilizando puro HTML e CSS, sem uso de frameworks como React ou bibliotecas externas.</p>
+      <div class="stacks-grid">
+
+        <div class="stacks-card">
+          <h3>HTML5</h3>
+          <div class="tipo">Estrutura</div>
+          <p>O esqueleto das páginas foi feito com elementos semânticos do HTML5 como section, aside, nav, header e footer.</p>
+        </div>
+
+        <div class="stacks-card">
+          <h3>CSS3</h3>
+          <div class="tipo">Estilização</div>
+          <p>A estilização visual, animações e o menu lateral foram feitos puramente em CSS.</p>
+        </div>
+
+        <div class="stacks-card">
+          <h3>Google Fonts</h3>
+          <div class="tipo">Tipografia</div>
+          <p>As fontes Playfair Display (títulos) e Crimson Pro (corpo de texto) foram importadas via Google Fonts para compor a identidade visual.</p>
+        </div>
+
+        <div class="stacks-card">
+          <h3>Flexbox</h3>
+          <div class="tipo">Layout</div>
+          <p>O sistema de layout das seções, grids de cards e sidebar foram construídos com CSS Flexbox, dispensando o uso de frameworks como Bootstrap.</p>
+        </div>
+
+        <div class="stacks-card">
+          <h3>Checkbox Trick</h3>
+          <div class="tipo">Interatividade</div>
+          <p>O menu hambúrguer usa a técnica de CSS "input:checkbox"  com o seletor ~ para controlar abertura e fechamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<section>
+  <div class="container">
+  <span class="eyebrow">Fontes de Pesquisa</span>
+  <h2>Referências</h2>
+    <p class="desc">Conteúdo baseado nas seguintes fontes.</p>
+    <div class="info-box">
+    <div class="info-item"><b>Livro</b><span>https://aikido.com.br/</span></div>
+    <div class="info-item"><b>Site</b><span>https://pt.wikipedia.org/</span></div>
+    </div>
+  </div>
+</section>
+
+  <section class="bg2">
+    <div class="container">
+      <span class="eyebrow">Avaliações</span>
+      <h2>Feedbacks Recebidos</h2>
+      <div class="feedbacks-grid">
+        <div class="feedback-card">
+          <p class="feedback-texto">"Ter um menu rápido seria ideal pra facilitar a navegação."</p>
+          <div class="feedback-autor">
+            <div>
+            <div class="feedback-nome"> Murilo Eric Oliveira Batista </div>
+            <div class="feedback-papel"> Engenheiro / Usuário do website</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feedback-card">
+          <p class="feedback-texto">"O contraste tá meio baixo em algumas partes, dificultando a leitura".</p>
+          <div class="feedback-autor">
+            <div>
+              <div class="feedback-nome"> Talyta Jazmin </div>
+              <div class="feedback-papel">Estudante de Publicidade / Usuária do website </div>
+            </div>
+          </div>
+        </div>
+
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="logo"> Ecos do Aço </div>
+        <p>Um projeto educacional sobre a história das armas de combate corpo a corpo.</p>
+      </div>
+      <small>© 2026 - Ecos do Aço. Fins educacionais.</small>
+    </div>
+  </footer>
+
+</body>
+</html>
