@@ -70,7 +70,7 @@ background:rgba(0,0,0,0.6);
 pointer-events:all;
 }
 
-.sidebar{
+.barra-lateral{
 position:fixed;
 top:0;
 left:0;
@@ -85,11 +85,11 @@ display:flex;
 flex-direction:column;
 }
 
-#menu:checked ~ .sidebar{
+#menu:checked ~ .barra-lateral{
 transform:translateX(0);
 }
 
-.sidebar header{
+.barra-lateral header{
 padding:24px 20px;
 border-bottom:1px solid #2e2b24;
 display:flex;
@@ -109,12 +109,12 @@ font-size:20px;
 color:#a89880;
 }
 
-.sidebar nav{
+.barra-lateral nav{
 flex:1;
 padding-top:10px;
 }
 
-.sidebar nav a{
+.barra-lateral nav a{
 display:block;
 padding:14px 20px;
 font-size:13px;
@@ -124,20 +124,20 @@ color:#a89880;
 border-left:2px solid transparent;
 }
 
-.sidebar nav a:hover,
-.sidebar nav a.active{
+.barra-lateral nav a:hover,
+.barra-lateral nav a.active{
 color:#c8a96e;
 border-left:2px solid #c8a96e;
 background:rgba(200,169,110,0.05);
 }
 
-.sidebar hr{
+.barra-lateral hr{
 border:none;
 border-top:1px solid #2e2b24;
 margin:6px 20px;
 }
 
-.sidebar footer{
+.barra-lateral footer{
 padding:16px 20px;
 border-top:1px solid #2e2b24;
 font-size:12px;
@@ -174,7 +174,7 @@ color:#a89880;
 .legenda{
 display:block;
 font-size:15px;
-color:#b69861;
+color:#bca06b;
 text-transform:uppercase;
 margin-bottom:8px;
 }
@@ -232,12 +232,7 @@ font-size:20px;
 margin-bottom:4px;
 }
 
-.origin{
-font-size:12px;
-color:#8a6f3e;
-margin-bottom:14px;
-text-transform:uppercase;
-}
+
 
 .carta p{
 font-size:14px;
@@ -268,7 +263,7 @@ align-items: flex-start;
 }
 
 .katana-grid p{
-color:#e0cbac;
+color:#9a886f;
 margin-bottom:20px;
 }
 
@@ -323,7 +318,7 @@ max-width:280px;
 <input type="checkbox" id="menu" autocomplete="off" />
 <label class="hamburger" for="menu">☰</label>
 <label class="overlay" for="menu"></label>
-<aside class="sidebar">
+<aside class="barra-lateral">
   <header>
     <span class="logo"> Ecos do Aço </span>
     <label class="close" for="menu"></label>
@@ -356,49 +351,49 @@ max-width:280px;
         <div class="carta">
           <img src="imagens/katana_jp.png" alt="Katana_1"/>
           <h3>Katana</h3>
-          <div class="origin">Japão · Séc. X</div>
+          <div class="legenda">Japão · Séc. X</div>
           <p>Espada curva de um fio, símbolo da classe samurai. Forjada em aço tamahagane com processo de dobramento que combina dureza e flexibilidade.</p>
         </div>
 
         <div class="carta">
           <img src="imagens/alabarda_2.png" alt="Naginata"/>
           <h3>Naginata</h3>
-          <div class="origin">Japão · Séc. XII</div>
+          <div class="legenda">Japão · Séc. XII</div>
           <p> A naginata é uma alabarda japonesa de haste longa (cerca de 2 metros), originária do período Nara (século VIII), usada por monges guerreiros (sōhei), samurais e onna-bugeisha (guerreiras). Eficaz contra cavalaria, popularizou-se nos períodos Heian e Kamakura, mas entrou em desuso no século XIV.</p>
         </div>
 
         <div class="carta">
            <img src="imagens/tanto_1.png" alt="Tanto"/>
           <h3>Tanto</h3>
-          <div class="origin">Japão · Séc. IX</div>
+          <div class="legenda">Japão · Séc. IX</div>
           <p> O tantô é uma adaga japonesa curta (15-30 cm), arma secundária dos samurais para combates corpo a corpo ou espaços restritos, introduzida no período Heian. Associada ao tantojutsu, era usada para perfurações letais e autodefesa, com lâmina de aço damasco.</p>
         </div>
 
         <div class="carta">
           <img src="imagens/guandao_4.png" alt="Guan Dao"/>
           <h3>Guan Dao</h3>
-          <div class="origin">China · Séc. III a.C.</div>
+          <div class="legenda">China · Séc. III a.C.</div>
           <p>O nome Guan Dao é uma homenagem ao o General Guan Yu (160–219), uma figura histórica real, também escrito como um personagem do épico chinês "Os Três Reinos", de autoria de Luo Guanzhong no século XIV.</p>
         </div>
         
    <div class="carta">
           <img src="imagens/nunchaku_2.png" alt="Nunchaku"/>
           <h3>Nunchaku</h3>
-          <div class="origin">China · Séc. XVI - XVII</div>
+          <div class="legenda">China · Séc. XVI - XVII</div>
           <p>O nunchaku é uma arma tradicional de artes marciais composta por dois bastões curtos conectados por uma corda ou corrente curta. Também conhecido como bastão de caratê, provavelmente vindo da mesma origem que a tonfa, o nunchaku é frequentemente explicado como uma ferramenta antiga usada por fazendeiros para separar o arroz.</p>
         </div>
 
      <div class="carta">
           <img src="imagens/bostaff.png" alt="Bo Staff"/>
           <h3>Bastão Bô </h3>
-          <div class="origin">China · Séc.XV </div>
+          <div class="legenda">China · Séc.XV </div>
           <p>Chamado de "pai de todas as armas" no kung fu Shaolin, mede cerca de 1,8-2 metros, com extremidade mais grossa na base para melhor equilíbrio e manuseio. Originário de ferramentas agrícolas chinesas antigas, evoluiu para arma de monastérios Shaolin e estilos como Choy Lay Fut.</p>
         </div>
 
         <div class="carta">
           <img src="imagens/talwar_4.png" alt="Bastão Bô"/>
           <h3>Talwar </h3>
-          <div class="origin">China · Séc.XV </div>
+          <div class="legenda">China · Séc.XV </div>
           <p>A talwar é um sabre curvo tradicional do subcontinente indiano, amplamente usado por guerreiros como sikhs, rajputs e mughals. Possui lâmina curva moderada (70-90 cm), mais larga na ponta para cortes potentes, com guarda em disco integral de ferro (indo-muçulmana), quillons e pomo achatado que pressiona o pulso em uso intensivo. Possui empunhadura ergonômica para uma mão e ligada por resina forte.
 </p>
         </div>
@@ -406,14 +401,14 @@ max-width:280px;
         <div class="carta">
           <img src="imagens/Katar.png" alt="Katar"/>
           <h3>Katar</h3>
-          <div class="origin">Índia · Séc. XIV</div>
+          <div class="legenda">Índia · Séc. XIV</div>
           <p> Adaga de empunhadura em H com lâmina dupla reta e perfurante, símbolo dos Rajput, projetada para penetrar armaduras. </p>
         </div>
 
           <div class="carta">
           <img src="imagens/chakram_2.png" alt="Chakram"/>
           <h3>Chakram</h3>
-          <div class="origin">Índia · Séc. V A.C</div>
+          <div class="legenda">Índia · Séc. V A.C</div>
           <p>O chakram é uma arma de arremesso indiana circular, com borda afiada externa, usada historicamente por guerreiros sikhs e rajputs. Derivado do sânscrito "chakra" (roda), aparece em épicos como Mahabharata (século V a.C.) como arma divina de Vishnu. </p>
         </div>
       </div>
