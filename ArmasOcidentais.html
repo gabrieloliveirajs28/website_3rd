@@ -70,7 +70,7 @@ background:rgba(0,0,0,0.6);
 pointer-events:all;
 }
 
-.sidebar{
+.barra-lateral{
 position:fixed;
 top:0;
 left:0;
@@ -85,11 +85,11 @@ display:flex;
 flex-direction:column;
 }
 
-#menu:checked ~ .sidebar{
+#menu:checked ~ .barra-lateral{
 transform:translateX(0);
 }
 
-.sidebar header{
+.barra-lateral header{
 padding:24px 20px;
 border-bottom:1px solid #2e2b24;
 display:flex;
@@ -109,12 +109,12 @@ font-size:20px;
 color:#a89880;
 }
 
-.sidebar nav{
+.barra-lateral nav{
 flex:1;
 padding-top:10px;
 }
 
-.sidebar nav a{
+.barra-lateral nav a{
 display:block;
 padding:14px 20px;
 font-size:13px;
@@ -124,20 +124,20 @@ color:#a89880;
 border-left:2px solid transparent;
 }
 
-.sidebar nav a:hover,
-.sidebar nav a.active{
+.barra-lateral nav a:hover,
+.barra-lateral nav a.active{
 color:#c8a96e;
 border-left:2px solid #c8a96e;
 background:rgba(200,169,110,0.05);
 }
 
-.sidebar hr{
+.barra-lateral hr{
 border:none;
 border-top:1px solid #2e2b24;
 margin:6px 20px;
 }
 
-.sidebar footer{
+.barra-lateral footer{
 padding:16px 20px;
 border-top:1px solid #2e2b24;
 font-size:12px;
@@ -146,7 +146,7 @@ color:#6b5f4f;
 
 
 
-.hero{
+.secao-principal{
 display:flex;
 align-items:center;
 justify-content:center;
@@ -155,22 +155,29 @@ background:#161412;
 border-bottom:1px solid #2e2b24;
 }
 
-.hero-content{
+.secao-principal-content{
 max-width:600px;
 padding:80px 32px;
 }
 
 
-.hero h1{
+.secao-principal h1{
 font-size:42px;
 margin-bottom:16px;
 color:#f2ead8;
 }
 
-.hero p{
+.secao-principal p{
 color:#a89880;
 }
 
+.legenda{
+display:block;
+font-size:15px;
+color:#e9cf9e;
+text-transform:uppercase;
+margin-bottom:8px;
+}
 
 section{
 padding:70px 0;
@@ -193,7 +200,7 @@ margin-bottom:12px;
 }
 
 .desc{
-color:#a89880;
+color:#c7c7c7;
 max-width:520px;
 margin-bottom:40px;
 }
@@ -230,12 +237,6 @@ font-size:20px;
 margin-bottom:4px;
 }
 
-.origin{
-font-size:12px;
-color:#8a6f3e;
-margin-bottom:14px;
-text-transform:uppercase;
-}
 
 .carta p{
 font-size:14px;
@@ -258,7 +259,7 @@ align-items: flex-start;
 }
 
 .longsword-grid p{
-color:#e0cbac;
+color:#c7ae8b;
 margin-bottom:20px;
 }
 
@@ -314,7 +315,7 @@ max-width:280px;
 <input type="checkbox" id="menu" autocomplete="off" />
 <label class="hamburger" for="menu">☰</label>
 <label class="overlay" for="menu"></label>
-<aside class="sidebar">
+<aside class="barra-lateral">
   <header>
     <span class="logo"> Ecos do Aço </span>
     <label class="close" for="menu"></label>
@@ -330,8 +331,8 @@ max-width:280px;
     <footer>© 2026 - Ecos do Aço </footer>
   </aside>
 
-  <section class="hero">
-    <div class="hero-content">
+  <section class="secao-principal">
+    <div class="secao-principal-content">
       <h1>Armas do <em>Ocidente</em></h1>
       <p>A tradição guerreira da Europa, Américas e mundo Nórdico através dos séculos.</p>
     </div>
@@ -346,14 +347,14 @@ max-width:280px;
 
           <img src="imagens/longsword_1.webp" alt="Longsword"/>
           <h3>Longsword</h3>
-          <div class="origin">Europa(Escócia) · Séc. XIII</div>
+          <div class="legenda">Europa(Escócia) · Séc. XIII</div>
           <p>Espada longa de dois fios usada com uma ou duas mãos. Versátil em combate, permitia corte e estocada com alcance superior às espadas curtas medievais.</p>
         </div>
 
         <div class="carta">
           <img src="imagens/rapier.png" alt="Rapier"/>
           <h3>Rapieira </h3>
-          <div class="origin">Europa(Espanha) · Séc. XVI</div>
+          <div class="legenda">Europa(Espanha) · Séc. XVI</div>
           <p>A rapieira ou roupeira é um tipo de espada, de lâmina comprida e estreita, popular desde o período medieval até a renascença, que se tornou a arma mais comum daquela época, principalmente na Espanha, Itália e Portugal nos séculos XVI e XVII.
             A lâmina tem largura suficiente para cortar a golpe, mas muito do poder da rapieira vem da sua habilidade de perfuração. 
           </p>
@@ -362,7 +363,7 @@ max-width:280px;
         <div class="carta">
           <img src="imagens/alabarda_2.png" alt="Halberd"/>
           <h3>Alabarda </h3>
-          <div class="origin">Europa(Alsácia) · Séc. XIV</div>
+          <div class="legenda">Europa(Alsácia) · Séc. XIV</div>
           <p>A alabarda é uma arma antiga composta por uma longa haste. A haste é rematada por uma peça pontiaguda, de ferroAlabardaor sua vez é atravessada por uma lâmina em forma de meia-lua (similar à de um machado), com um gancho ou esporão no outro lado. 
             Sua difusão provocou a associação de diferentes formas, o que pode confundi-la com outras armas de cabo longo como a Naginata japonesa ou a Guan Dao chinesa.
           </p>
@@ -372,7 +373,7 @@ max-width:280px;
         <div class="carta">
           <img src="imagens/machado.png" alt="Battle Axe"/>
           <h3>Machado de Batalha</h3>
-          <div class="origin">Europa(Região Escandinava) · Séc. IX</div>
+          <div class="legenda">Europa(Região Escandinava) · Séc. IX</div>
           <p>O Machado dinamarquês é um tipo primitivo de machado de batalha, usado principalmente durante a tr"Machadore a Era Viquingue na Europa e início da Idade Média. Outros nomes para a arma incluem Machado Inglês e Machado de Alça.
             Sua superfície de corte varia, mas geralmente possui entre 20 e 30 centímetros. As lâminas Tipo L tendem a ser menores, com a ponta da broca varrida a frente para uma capacidade de corte superior.
           </p>
@@ -381,7 +382,7 @@ max-width:280px;
         <div class="carta">
           <img src="imagens/gladio.png" alt="Gladius"/>
           <h3> Gládio </h3>
-          <div class="origin">Europa(Roma) · Séc. III A.C</div>
+          <div class="legenda">Europa(Roma) · Séc. III A.C</div>
           <p> A gládio é uma espada curta utilizada na Antiguidade, que os autores latinos chamavam ense (em latim: ensis).
             É o mais antigo tipo de espada curta de lâmina reta de dois gumes conhecida. Caracteriza-se pela sua lâmina, tradicionalmente, bastante larga e quase da mesma largura do punho à ponta.
             Na Idade do bronze eram inigualáveis e na Idade do ferro mantiveram a primazia, em relação a outros tipos de armas alternativas.</p>
@@ -390,7 +391,7 @@ max-width:280px;
         <div class="carta">
           <img src="imagens/tomahawk_5.png" alt="Tomahawk"/>
           <h3>Tomahawk</h3>
-          <div class="origin">Américas · Pré-colonial</div>
+          <div class="legenda">Américas · Pré-colonial</div>
           <p> O tomahawk (ou "machadinha") é um tipo de machado de pequena dimensão, para uso com apenas uma das mãos, usado sobretudo pelos ameríndios algonquinos da América do Norte, tanto como ferramenta, quanto como arma. 
              Tradicionalmente, possui o formato de "machadinha" com um cabo reto O termo entrou na língua inglesa no século XVII como uma adaptação da palavra "Powhatan" (dos algonquinos da Virgínia).
           </p>
@@ -399,7 +400,7 @@ max-width:280px;
         <div class="carta">
           <img src="imagens/macuahuitl_2.png" alt="Macuahuitl"/>
           <h3>Macuahuitl</h3>
-          <div class="origin">Américas · Séc. XIV</div>
+          <div class="legenda">Américas · Séc. XIV</div>
           <p>Macuahuitl ou maquahuitl (mācuahuitl em Nahuatl,), também conhecida como “espada de madeira”, era uma arma usada pelos astecas e outros povos que habitavam no que atualmente é o México central. 
             Era uma espécie de clava achatada de onde sobressaíam várias lâminas de obsidiana, um tipo de vidro vulcânico muito utilizado para a fabricação de instrumentos cortantes pelos povos pré-colombianos</p>
         </div>
@@ -407,7 +408,7 @@ max-width:280px;
            <div class="carta">
           <img src="imagens/claymore_2.png" alt="Claymore"/>
           <h3>Claymore</h3>
-          <div class="origin">Europa(Escócia) · Séc. XV</div>
+          <div class="legenda">Europa(Escócia) · Séc. XV</div>
           <p>Claymore é uma variante escocesa da espada medieval montante utilizada durante os séculos XV e XVI.[1] Possui gume duplo e é manejada com as duas mãos, impedindo o guerreiro de utilizar um escudo. 
             A palavra claymore vem do gaélico escocês claidheamh mòr e significa espadão. A claymore é um tipo de espada montante, porém mais leve.</p>
         </div>
@@ -415,7 +416,7 @@ max-width:280px;
            <div class="carta">
           <img src="imagens/vikingsword.png" alt="Espada da Era Viking"/>
           <h3>Espada da Era Viking</h3>
-          <div class="origin">Europa(Noruega) · Séc. VIII</div>
+          <div class="legenda">Europa(Noruega) · Séc. VIII</div>
           <p> A espada da Era Viking (também conhecida como espada viking) ou espada carolíngia é o tipo de espada predominante na Europa Ocidental e do Norte durante a Alta Idade Média.
             A espada da Era Viking ou da era carolíngia desenvolveu-se no século VIII a partir da espada merovíngia, mais especificamente, a produção franca de espadas nos séculos VI e VII e, por sua vez, durante os séculos XI e XII, deu origem à espada de cavaleiro do período românico.[5]
             </p>
@@ -428,14 +429,14 @@ max-width:280px;
     <div class="container">
       <div class="longsword-grid">
         <div>
-          <span class="eyebrow">Arma em Destaque</span>
+          <span class="legenda">Arma em Destaque</span>
           <img src="imagens/longsword_1.webp" alt="Longsword"/>
           <h2>A Longsword</h2>
           <p>A longsword medieval é um dos exemplos mais sofisticados de engenharia de combate da Europa. Ao contrário do que se imagina, seu uso exigia treinamento extenso — os tratados de esgrima medievais, conhecidos como Fechtbücher, descrevem dezenas de técnicas complexas.</p>
           <p>Sua versatilidade era única: podia ser empunhada com uma ou duas mãos, usada em half-swording (segurando a lâmina para perfurar armaduras) e adaptada a diferentes distâncias de combate, tornando-a a arma mais completa da Europa medieval.</p>
         </div>
         <div class="destaque-box">
-          <span class="eyebrow">Especificações</span>
+          <span class="legenda">Especificações</span>
           <div class="destaque-item"><b>Comprimento</b><span>100 – 130 cm</span></div>
           <div class="destaque-item"><b>Lâmina</b><span>80 – 100 cm</span></div>
           <div class="destaque-item"><b>Material</b><span>Aço carbono forjado</span></div>
@@ -459,4 +460,5 @@ max-width:280px;
 
 </body>
 </html>
+
 
